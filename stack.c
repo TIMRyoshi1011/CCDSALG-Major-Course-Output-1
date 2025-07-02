@@ -1,3 +1,5 @@
+// Author: Marcus Timothy V. Ramos, S12
+
 #include "stack.h"
 
 void create(struct Stack *S) {
