@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 
-typedef struct {
+typedef struct { // Points structure to hold coordinates for the stack
     double x;
     double y;
 } Point;
 
+// Function prototypes for merge sorting operations
 double polarAngle(Point p0, Point p);
 Point anchorPoint(Point *points, int n);
 int compare(const void *a, const void *b, void *p0);
