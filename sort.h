@@ -7,7 +7,7 @@ typedef struct { // Points structure to hold coordinates for the stack
     double y;
 } Point;
 
-// Function prototypes for sorting operations
+// Function prototypes for bubble sorting operations
 double polarAngle(Point p0, Point p);
 Point anchorPoint(Point *points, int n);
 void bubbleSort(Point *points, int n);
