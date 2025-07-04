@@ -29,6 +29,9 @@ Point anchorPoint(Point *points, int n) {
 }
 
 void merge(Point *points, int left, int mid, int right, Point anchor) {
+
+    int i, j, k;
+    
     int lSize = mid - left + 1;
     int rSize = right - mid;
 
@@ -42,7 +45,9 @@ void merge(Point *points, int left, int mid, int right, Point anchor) {
         R[j] = points[mid + 1 + j];
     }
 
-    int i = 0, j = 0, k = left;
+    i = 0;
+    j = 0;
+    k = left;
 
     while (i < lSize && j < rSize) {
         if (compare(&L[i], &R[j], &anchor) < 0) {
