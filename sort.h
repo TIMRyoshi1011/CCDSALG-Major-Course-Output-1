@@ -9,5 +9,5 @@ typedef struct { // Points structure to hold coordinates for the stack
 
 // Function prototypes for bubble sorting operations
 double polarAngle(Point p0, Point p);
-Point anchorPoint(Point *points, int n);
-void bubbleSort(Point *points, int n);
+Point anchorPoint(Point points[], int n);
+void bubbleSort(Point points[], int n);
