@@ -9,8 +9,7 @@ typedef struct { // Points structure to hold coordinates for the stack
 
 // Function prototypes for merge sorting operations
 double polarAngle(Point p0, Point p);
-Point anchorPoint(Point *points, int n);
-int compare(const void *a, const void *b, void *p0);
-void merge(Point *points, int left, int mid, int right, Point anchor);
-void mergeSort(Point *points, int left, int right, Point anchor);
-void sortPoints(Point *points, int n);
+Point anchorPoint(Point points[], int n);
+void merge(Point points[], int left, int mid, int right, Point anchor);
+void mergeSort(Point points[], int left, int right, Point anchor);
+void sortPoints(Point points[], int n);
