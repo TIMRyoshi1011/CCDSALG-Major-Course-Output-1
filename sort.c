@@ -4,7 +4,7 @@ double polarAngle(Point p0, Point p) {
     return atan2(p.y - p0.y, p.x - p0.x);
 }
 
-Point anchorPoint(Point *points, int n) {
+Point anchorPoint(Point points[], int n) {
     int i;
     Point anchor = points[0];
     for (i = 1; i < n; i++) {
@@ -15,7 +15,7 @@ Point anchorPoint(Point *points, int n) {
     return anchor;
 }
 
-void bubbleSort(Point *points, int n) {
+void bubbleSort(Point points[], int n) {
     int i, j;
     Point anchor = anchorPoint(points, n); 
     for (i = 0; i < n; i++) {
