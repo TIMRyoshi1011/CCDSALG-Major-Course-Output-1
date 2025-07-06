@@ -1,4 +1,4 @@
-// Author: Marcus Timothy V. Ramos, S12
+// Author: Marcus Timothy V. Ramos
 #include <stdio.h>
 #include <stdlib.h>
 
