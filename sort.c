@@ -1,3 +1,5 @@
+// Author: Marcus Timothy V. Ramos
+// Author: Byron David C. Hung
 #include "sort.h"
 
 double polarAngle(Point p0, Point p) {
