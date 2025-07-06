@@ -1,4 +1,6 @@
-#include "sort2.h"
+// Author: Marcus Timothy V. Ramos
+// Author: Keann Colin T. Lusong
+#include "sort.h"
 
 double polarAngle(Point p0, Point p) {
     return atan2(p.y - p0.y, p.x - p0.x);
