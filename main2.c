@@ -1,7 +1,7 @@
 // Author: Marcus Timothy V. Ramos
 #include "graham_scan2.c" 
 
-typedef char String[100];
+typedef char String[21];
 
 int main(){
     int n;
