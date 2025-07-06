@@ -2,7 +2,7 @@
 #include "sort.c"
 #include "stack.c"
 #include <time.h>
-print
+
 double getDirection(Point a, Point b, Point c) {
     return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 }
