@@ -1,3 +1,5 @@
+// Author: Marcus Timothy V. Ramos
+// Author: Byron David C. Hung
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
