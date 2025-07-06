@@ -1,24 +1,24 @@
-// Author: Marcus Timothy V. Ramos, S12
-
-#include "stack.h"
-// insert headers (for slow algo) here
+// Author: Marcus Timothy V. Ramos
+#include "graham_scan1.c" 
 
 typedef char String[100];
 
 int main(){
     int n;
     double x, y;
-    double points[MAX][2];
+    Point points[MAX];
     String inputName;
     String outputName;
-    FILE *grScan;
+    struct Stack S;
+    Point anchor;
+    FILE *slowAlg;
 
     printf("Input Filename: ");
     scanf("%s", inputName);
 
-    grScan = fopen(inputName, "r");
+    slowAlg = fopen(inputName, "r");
 
-    if (grScan == NULL) {
+    if (slowAlg == NULL) {
         printf("\nFile Not Found!");
     }
 
@@ -26,23 +26,30 @@ int main(){
         printf("Output Filename: ");
         scanf("%s", outputName);
 
-        fscanf(grScan, "%d", &n);
+        fscanf(slowAlg, "%d", &n);
 
-        for(int i = 0; i < n && fscanf(grScan, "%lf %lf", &x, &y) == 2; i++) {
-            points[i][0] = x;
-            points[i][1] = y;
+        for(int i = 0; i < n && fscanf(slowAlg, "%lf %lf", &x, &y) == 2; i++) {
+            points[i].x = x;
+            points[i].y = y;
         }
 
-        // insert graham scan (slow) algorithm here
+        printf("\nElapsed Time:\n");
+        convexHull(points, n, &S);
 
-        grScan = fopen(outputName, "w");
+        slowAlg = fopen(outputName, "w");
 
-        // insert code to write the output to the file
+        fprintf(slowAlg, "%d\n", S.top + 1);
+        fprintf(slowAlg, "%9lf %10lf\n", anchor.x, anchor.y);
+
+        for (int i = 0; i <= S.top; i++) {
+            Point p = toSortPoints(S.points[i]);
+            fprintf(slowAlg, "%9lf %10lf\n", p.x, p.y);
+        }
 
         printf("\nData successfully written to %s", outputName);
     }
     
-    fclose(grScan);
+    fclose(slowAlg);
 
     return 0;
 }
