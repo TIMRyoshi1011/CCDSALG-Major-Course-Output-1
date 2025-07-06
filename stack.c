@@ -1,4 +1,4 @@
-// Author: Marcus Timothy V. Ramos, S12
+// Author: Marcus Timothy V. Ramos
 #include "stack.h"
 
 void create(struct Stack *S) {
