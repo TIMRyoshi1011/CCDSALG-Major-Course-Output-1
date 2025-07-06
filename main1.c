@@ -10,7 +10,6 @@ int main(){
     String inputName;
     String outputName;
     struct Stack S;
-    Point anchor;
     FILE *slowAlg;
 
     printf("Input Filename: ");
@@ -39,7 +38,6 @@ int main(){
         slowAlg = fopen(outputName, "w");
 
         fprintf(slowAlg, "%d\n", S.top + 1);
-        fprintf(slowAlg, "%9lf %10lf\n", anchor.x, anchor.y);
 
         for (int i = 0; i <= S.top; i++) {
             Point p = toSortPoints(S.points[i]);
