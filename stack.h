@@ -1,6 +1,6 @@
-// Author: Marcus Timothy V. Ramos
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define MAX 32768
 

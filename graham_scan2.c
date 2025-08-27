@@ -1,22 +1,24 @@
-// Author: Marcus Timothy V. Ramos
 #include "sort2.c"
 #include "stack.c"
 #include <time.h>
 
-/*  Function to calculate the direction of the turn using cross product
-    @param a - first point
-    @param b - second point
-    @param c - third point
-    @return positive if counter-clockwise, negative if clockwise, zero if collinear
-*/
 double getDirection(Point a, Point b, Point c) {
     return (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 }
 
-/*  Function to convert Point from sort.h to Points from stack.h structure
-    @param srt - Point from the structure from sort.h
-    @return stk - Points from the structure from stack.h
-*/
+int hasCollinearPoints(Point points[], int n) {
+    for (int i = 0; i < n - 2; i++) {
+        for (int j = i + 1; j < n - 1; j++) {
+            for (int k = j + 1; k < n; k++) {
+                if (getDirection(points[i], points[j], points[k]) == 0) {
+                    return 1; 
+                }
+            }
+        }
+    }
+    return 0; 
+}
+
 Points toStackPoints(Point srt) {
     Points stk;
     stk.a = srt.x;
@@ -24,10 +26,6 @@ Points toStackPoints(Point srt) {
     return stk;
 }
 
-/*  Function to convert Points from stack.h structure to Point from sort.h structure 
-    @param stk - Points from the structure from stack.h
-    @return srt - Point from the structure from sort.h
-*/
 Point toSortPoints(Points stk) {
     Point srt;
     srt.x = stk.a;
@@ -35,11 +33,6 @@ Point toSortPoints(Points stk) {
     return srt;
 }
 
-/*  Function to compute the convex hull of a set of points using Graham's scan algorithm
-    @param points - array of points that were inputted
-    @param n - number of elements in the array
-    @param S - pointer to the stack structure to hold the convex hull points
-*/
 void convexHull(Point points[], int n, struct Stack *S) {
     clock_t start; 
     clock_t end;  

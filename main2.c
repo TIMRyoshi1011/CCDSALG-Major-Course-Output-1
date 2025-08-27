@@ -1,4 +1,3 @@
-// Author: Marcus Timothy V. Ramos
 #include "graham_scan2.c" 
 
 typedef char String[21];
@@ -37,7 +36,12 @@ int main(){
 
         fastAlg = fopen(outputName, "w");
 
-        fprintf(fastAlg, "%d\n", S.top + 1);
+        if(hasCollinearPoints(points, n)) {
+            fprintf(fastAlg, "%d\n", S.top + 2);
+            fprintf(fastAlg, "%9lf %10lf\n", anchorPoint(points, n).x, anchorPoint(points, n).y);
+        }
+        else 
+            fprintf(fastAlg, "%d\n", S.top + 1);
 
         for (int i = 0; i <= S.top; i++) {
             Point p = toSortPoints(S.points[i]);

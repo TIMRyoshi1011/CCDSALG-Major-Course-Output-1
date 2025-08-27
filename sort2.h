@@ -1,5 +1,3 @@
-// Author: Marcus Timothy V. Ramos
-// Author: Keann Colin T. Lusong
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

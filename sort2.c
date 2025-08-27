@@ -1,21 +1,9 @@
-// Author: Marcus Timothy V. Ramos
-// Author: Keann Colin T. Lusong
 #include "sort.h"
 
-/*  function to calculate the polar angle using atan2
-    @param p0 - the reference point
-    @param p - the point to calculate the angle to
-    @return the polar angle in radians
-*/ 
 double polarAngle(Point p0, Point p) {
     return atan2(p.y - p0.y, p.x - p0.x);
 }
 
-/*  function to find the anchor point 
-    @param points - array of points
-    @param n - number of points in the array
-    @return anchor point
-*/
 Point anchorPoint(Point points[], int n) {
     int i;
     Point anchor = points[0];
@@ -27,13 +15,6 @@ Point anchorPoint(Point points[], int n) {
     return anchor;
 }
 
-/*  merge function for merge sort
-    @param points - array of points to be sorted
-    @param left - starting index of the subarray
-    @param mid - middle index of the subarray
-    @param right - ending index of the subarray
-    @param anchor - anchor point 
-*/
 void merge(Point points[], int left, int mid, int right, Point anchor) {
 
     int i, j, k;
@@ -81,12 +62,6 @@ void merge(Point points[], int left, int mid, int right, Point anchor) {
     }
 }
 
-/*  merge sort algorithm
-    @param points - array of points to be sorted
-    @param left - starting index of the subarray
-    @param right - ending index of the subarray
-    @param anchor - anchor point
-*/
 void mergeSort(Point points[], int left, int right, Point anchor) {
     if (left < right) {
         int mid = left + (right - left) / 2;
@@ -98,10 +73,6 @@ void mergeSort(Point points[], int left, int right, Point anchor) {
     }
 }
 
-/*  function to sort points using merge sort
-    @param points - array of points to be sorted
-    @param n - number of elements in the array
-*/
 void sortPoints(Point points[], int n) {
     Point anchor = anchorPoint(points, n);
     mergeSort(points, 0, n - 1, anchor);
